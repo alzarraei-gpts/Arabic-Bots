@@ -29,18 +29,20 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;800;900&amp;family=Tajawal:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
-<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=xPNL1aMkxqIHW2aUnYfKBJEHdk_YvhjQknD9vN3PQt37jx6IAUEdhE5Vmm9qGp2jS2yV81DV3cQqlt2KHBmv2XdykFoGYmsXawb0Kh0DDryEVJml1Mh1WIPttNsnDvkBeYiTlisJlY_EAEWZQYW_WbjEcII3UOtoWChwZYoHutJ2wMAQz6U0dHsnq005LaMfoaWp_Y7FYGI_DgxFk99pe_9f8me1UtrwIqkxzXKAsvB4YF2lyQ4-v0wSY9zWqkQ3FSkN9gIUwx9lwKoNdENhHg" charset="UTF-8"></script><script charset="UTF-8" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=S-u7pbVm0Txby_ETt0gBUcvrr_A6RVsYXozjjLBF6vqQghvQeWvewBggIyidD1fPg9DczjODaQF4qvJS-y_umLwmAdbGAXr7BBeNnfOy_lVlAlYxGca0gr35hYFC8HMHQv0FbqEbtISOpT6oOAE02kjLTyKsHX4HDiYLlKDT4TspgD6IsYsCZ6zjdOM70IW6TFQivwK4CKFlYKsrpZ1DmAFYqwTT8uR5oE2X7bpFayKu1DOTtlGSsVto8VyzyeNUpCuhr0oRkaLHbHKgWAHVog" type="text/javascript">function toggleCategory(btn){
-  const category = btn.closest('.category');
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=LTTEIGHXNFJAy_wama0C5Em-Ww0QIOIROrtwhRcFA54fSTRsGtmSUeM1Spag6luKUW2ybnKnFb13VDeg2a08krvAF-9jNkDaV5ZgZdWdk1xeXpRJhFiWjUJRAgB2L37GSJZ_5_zDuU94zAm5QJ4dxX4rj1gDtNnc1Q-QDv0Ctgbqj3GW0_wIC4WHVvB82bzB1zegUl_sz0H0Hw-VCeH3PlhNIKfvbHGGBIkTQgmYx2U4GRtHfYJfLkCGKVsakxutRuL38zhJF0oxZsP_nBBIug" charset="UTF-8"></script><script charset="UTF-8" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=S-u7pbVm0Txby_ETt0gBUcvrr_A6RVsYXozjjLBF6vqQghvQeWvewBggIyidD1fPg9DczjODaQF4qvJS-y_umLwmAdbGAXr7BBeNnfOy_lVlAlYxGca0gr35hYFC8HMHQv0FbqEbtISOpT6oOAE02kjLTyKsHX4HDiYLlKDT4TspgD6IsYsCZ6zjdOM70IW6TFQivwK4CKFlYKsrpZ1DmAFYqwTT8uR5oE2X7bpFayKu1DOTtlGSsVto8VyzyeNUpCuhr0oRkaLHbHKgWAHVog" type="text/javascript">function toggleCategory(button) {
+  const category = button.closest('.category');
   const isOpen = category.classList.contains('open');
-  document.querySelectorAll('.category.open').forEach(el => {
-    if(el !== category){
-      el.classList.remove('open');
-      const otherBtn = el.querySelector('.category-toggle');
-      if(otherBtn) otherBtn.setAttribute('aria-expanded','false');
-    }
+
+  document.querySelectorAll('[data-category-wrap]').forEach((item) => {
+    item.classList.remove('open');
+    const toggle = item.querySelector('.category-toggle');
+    if (toggle) toggle.setAttribute('aria-expanded', 'false');
   });
-  category.classList.toggle('open', !isOpen);
-  btn.setAttribute('aria-expanded', String(!isOpen));
+
+  if (!isOpen) {
+    category.classList.add('open');
+    button.setAttribute('aria-expanded', 'true');
+  }
 }
 </script><style>
 *{box-sizing:border-box}
@@ -479,175 +481,158 @@ button,input,a{touch-action:manipulation}
 
 
 
-/* ===== تشكيل السكشن كرأس أدوات واضح مطابق للمطلوب ===== */
+
+
+
+
+/* ===== السكشن وفق المرجع مع انطواء نصفي ===== */
 .categories{
   padding:22px;
   display:grid;
-  gap:18px;
+  gap:16px;
 }
 
 .category{
-  margin:0;
-  padding:0;
-  border:none !important;
-  background:transparent !important;
-  box-shadow:none !important;
-  overflow:visible !important;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:24px;
+  background:linear-gradient(180deg,#13191b,#0f1416);
+  overflow:hidden;
 }
 
 .category-toggle{
   width:100%;
-  min-height:98px;
-  padding:18px 22px;
+  background:transparent;
+  border:none;
+  color:#fff;
+  padding:18px 20px;
   display:flex;
-  flex-direction:row-reverse;
   align-items:center;
   justify-content:space-between;
-  gap:18px;
-  border:none !important;
-  border-radius:28px;
-  background:linear-gradient(90deg, rgba(10,14,16,.98) 0%, rgba(12,18,21,.98) 38%, rgba(14,22,18,.95) 100%);
-  box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,.07),
-    0 18px 32px rgba(0,0,0,.16);
-  color:#fff;
+  gap:16px;
   cursor:pointer;
   text-align:right;
 }
 
 .category-toggle:hover{
-  background:linear-gradient(90deg, rgba(11,15,17,.99) 0%, rgba(14,21,24,.99) 38%, rgba(18,27,22,.96) 100%);
-  box-shadow:
-    inset 0 0 0 1px rgba(141,228,17,.16),
-    0 18px 32px rgba(0,0,0,.18);
+  background:rgba(255,255,255,.02);
 }
 
 .category-title{
-  display:flex !important;
-  flex-direction:row-reverse;
-  align-items:center;
-  gap:12px;
-  margin:0;
-  font-family:"Cairo","Tajawal",Tahoma,Arial,sans-serif;
-  font-size:1.55rem;
+  font-size:1.24rem;
   font-weight:900;
-  line-height:1.25;
-  color:#ffffff;
-}
-
-.category-title::before{
-  content:none !important;
-  display:none !important;
 }
 
 .category-side{
   display:flex;
-  flex-direction:row-reverse;
   align-items:center;
   gap:12px;
-  flex:0 0 auto;
 }
 
 .category-count{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-width:64px;
-  height:42px;
-  padding:0 16px;
+  padding:6px 12px;
   border-radius:999px;
-  background:linear-gradient(180deg, rgba(61,93,11,.42), rgba(35,55,8,.34));
-  box-shadow:inset 0 0 0 1px rgba(141,228,17,.18);
-  color:#efffcf;
+  background:rgba(141,228,17,.10);
+  border:1px solid rgba(141,228,17,.18);
+  color:#dff5c0;
   font-weight:900;
-  font-size:1rem;
-  white-space:nowrap;
 }
 
 .category-arrow{
-  width:40px;
-  height:40px;
+  width:34px;
+  height:34px;
   display:grid;
   place-items:center;
   border-radius:50%;
-  background:#0d1417;
-  box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);
-  color:#fff;
-  font-size:14px;
-  line-height:1;
-  transition:transform .22s ease, background .22s ease, box-shadow .22s ease;
+  background:#0f1517;
+  border:1px solid rgba(255,255,255,.08);
+  transition:transform .22s ease;
 }
 
 .category.open .category-arrow{
   transform:rotate(180deg);
-  background:#121b1f;
-  box-shadow:inset 0 0 0 1px rgba(141,228,17,.16);
 }
 
-/* إخفاء كامل للمحتوى حال الإغلاق */
+/* جوهر التعديل: إظهار رؤوس الأدوات فقط عند الإغلاق */
 .category-panel{
-  display:none !important;
-  margin-top:12px;
+  display:block;
+  max-height:182px;
+  overflow:hidden;
+  transition:max-height .30s ease;
+  position:relative;
 }
 
 .category.open .category-panel{
-  display:block !important;
+  max-height:4000px;
 }
 
-.category:not(.open) .category-panel,
-.category:not(.open) .category-panel > div,
-.category:not(.open) .tools-grid,
-.category:not(.open) .tool-card{
-  display:none !important;
-  height:0 !important;
-  min-height:0 !important;
-  max-height:0 !important;
-  overflow:hidden !important;
-  opacity:0 !important;
-  pointer-events:none !important;
-  margin:0 !important;
-  padding-top:0 !important;
-  padding-bottom:0 !important;
-  border-width:0 !important;
+.category-panel > div{
+  overflow:hidden;
 }
 
-/* عند الفتح */
-.category.open .category-panel > div{
-  overflow:visible !important;
+.category:not(.open) .category-panel::after{
+  content:"";
+  position:absolute;
+  right:0;
+  left:0;
+  bottom:0;
+  height:46px;
+  background:linear-gradient(180deg,rgba(15,20,22,0),rgba(15,20,22,.98));
+  pointer-events:none;
 }
 
-.category.open .tools-grid{
-  display:grid !important;
+.tools-grid{
+  padding:0 18px 18px;
+  display:grid;
   grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
   gap:14px;
-  padding:18px;
-  border-radius:24px;
-  background:linear-gradient(180deg,rgba(12,15,17,.98),rgba(9,12,14,.98));
-  box-shadow:inset 0 0 0 1px rgba(255,255,255,.06), 0 16px 28px rgba(0,0,0,.14);
+}
+
+.tool-card{
+  background:linear-gradient(180deg,rgba(31,44,39,.96),rgba(22,31,35,.98));
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:22px;
+  padding:16px;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  min-height:240px;
+  transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+
+.tool-card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(141,228,17,.42);
+  box-shadow:0 0 0 1px rgba(141,228,17,.16),0 0 22px rgba(141,228,17,.16),0 0 42px rgba(89,215,184,.10),var(--shadow);
+}
+
+/* حالة الإغلاق: قصّ البطاقات بعد الرأس مباشرة */
+.category:not(.open) .tool-card{
+  min-height:auto;
+  gap:0;
+  padding:16px 16px 12px;
+  overflow:hidden;
+}
+
+.category:not(.open) .tool-head{
+  display:grid;
+  gap:8px;
+  margin:0;
+}
+
+.category:not(.open) .tool-card h3{
+  min-height:auto;
+  margin:0;
+}
+
+.category:not(.open) .tool-actions,
+.category:not(.open) .tool-meta{
+  display:none !important;
 }
 
 @media (max-width:760px){
-  .categories{padding:16px; gap:14px;}
-  .category-toggle{
-    min-height:78px;
-    padding:14px 16px;
-    border-radius:22px;
-  }
-  .category-title{
-    font-size:1.15rem;
-    gap:10px;
-  }
-  .category-count{
-    min-width:56px;
-    height:38px;
-    padding:0 12px;
-    font-size:.92rem;
-  }
-  .category-arrow{
-    width:34px;
-    height:34px;
-    font-size:12px;
-  }
+  .categories{padding:16px}
+  .tools-grid{grid-template-columns:1fr;padding:0 14px 14px}
+  .category-panel{max-height:156px}
 }
 
 </style>
@@ -1044,7 +1029,7 @@ function toggleCategory(button) {
   const category = button.closest('.category');
   const isOpen = category.classList.contains('open');
 
-  document.querySelectorAll('.category').forEach((item) => {
+  document.querySelectorAll('[data-category-wrap]').forEach((item) => {
     item.classList.remove('open');
     const toggle = item.querySelector('.category-toggle');
     if (toggle) toggle.setAttribute('aria-expanded', 'false');
@@ -1182,18 +1167,20 @@ const scrollTopBtn = document.getElementById('scrollTopBtn');
 window.addEventListener('scroll', () => {
   scrollTopBtn.style.display = window.scrollY > 450 ? 'block' : 'none';
 });
-function toggleCategory(btn){
-  const category = btn.closest('.category');
+function toggleCategory(button) {
+  const category = button.closest('.category');
   const isOpen = category.classList.contains('open');
-  document.querySelectorAll('.category.open').forEach(el => {
-    if(el !== category){
-      el.classList.remove('open');
-      const otherBtn = el.querySelector('.category-toggle');
-      if(otherBtn) otherBtn.setAttribute('aria-expanded','false');
-    }
+
+  document.querySelectorAll('[data-category-wrap]').forEach((item) => {
+    item.classList.remove('open');
+    const toggle = item.querySelector('.category-toggle');
+    if (toggle) toggle.setAttribute('aria-expanded', 'false');
   });
-  category.classList.toggle('open', !isOpen);
-  btn.setAttribute('aria-expanded', String(!isOpen));
+
+  if (!isOpen) {
+    category.classList.add('open');
+    button.setAttribute('aria-expanded', 'true');
+  }
 }
 </script>
 </body>
