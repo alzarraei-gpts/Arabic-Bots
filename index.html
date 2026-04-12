@@ -29,7 +29,7 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;800;900&amp;family=Tajawal:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
-<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=LTTEIGHXNFJAy_wama0C5Em-Ww0QIOIROrtwhRcFA54fSTRsGtmSUeM1Spag6luKUW2ybnKnFb13VDeg2a08krvAF-9jNkDaV5ZgZdWdk1xeXpRJhFiWjUJRAgB2L37GSJZ_5_zDuU94zAm5QJ4dxX4rj1gDtNnc1Q-QDv0Ctgbqj3GW0_wIC4WHVvB82bzB1zegUl_sz0H0Hw-VCeH3PlhNIKfvbHGGBIkTQgmYx2U4GRtHfYJfLkCGKVsakxutRuL38zhJF0oxZsP_nBBIug" charset="UTF-8"></script><script charset="UTF-8" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=S-u7pbVm0Txby_ETt0gBUcvrr_A6RVsYXozjjLBF6vqQghvQeWvewBggIyidD1fPg9DczjODaQF4qvJS-y_umLwmAdbGAXr7BBeNnfOy_lVlAlYxGca0gr35hYFC8HMHQv0FbqEbtISOpT6oOAE02kjLTyKsHX4HDiYLlKDT4TspgD6IsYsCZ6zjdOM70IW6TFQivwK4CKFlYKsrpZ1DmAFYqwTT8uR5oE2X7bpFayKu1DOTtlGSsVto8VyzyeNUpCuhr0oRkaLHbHKgWAHVog" type="text/javascript">function toggleCategory(button) {
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=ZVhrRQCsBfz98e_9KCLbfkKBTVMUeIwNAAwng464jPfPHvrjGKW5xxn-uS1CHS6eeCapNF4c5bPiVbc0DFFEuge1-yuZnQfhalUlliC_1rwRaNywGkYFpk51cdXV_ibC9Uu0yxn-M1kgtvK-ZvhImOO_AIvY6stVtdVSSgomZFeurrQ8b8quA_YVcSdbkeA6aK72W0LzNx-wedXW807m5tkkFifdNCokmaasAv6CGkikoCSusUtA8K-rJa1tWPbu6fHzFOyA4S4ixL7xm2fu0g" charset="UTF-8"></script><script charset="UTF-8" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=S-u7pbVm0Txby_ETt0gBUcvrr_A6RVsYXozjjLBF6vqQghvQeWvewBggIyidD1fPg9DczjODaQF4qvJS-y_umLwmAdbGAXr7BBeNnfOy_lVlAlYxGca0gr35hYFC8HMHQv0FbqEbtISOpT6oOAE02kjLTyKsHX4HDiYLlKDT4TspgD6IsYsCZ6zjdOM70IW6TFQivwK4CKFlYKsrpZ1DmAFYqwTT8uR5oE2X7bpFayKu1DOTtlGSsVto8VyzyeNUpCuhr0oRkaLHbHKgWAHVog" type="text/javascript">function toggleCategory(button) {
   const category = button.closest('.category');
   const isOpen = category.classList.contains('open');
 
@@ -179,7 +179,7 @@ button.cta{-webkit-appearance:none;appearance:none}
 .result-chip span,.update-chip span{color:#dff5c0}
 .categories{padding:22px;display:grid;gap:16px}
 .category{border:1px solid rgba(255,255,255,.08);border-radius:24px;background:linear-gradient(180deg,#13191b,#0f1416);overflow:hidden}
-.category-toggle{width:100%;background:transparent;border:none;color:#fff;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;cursor:pointer;text-align:right}
+Rpx 20px 18px 110px;display:flex;align-items:center;justify-content:space-between;gap:16px;cursor:pointer;text-align:right}
 .category-toggle:hover{background:rgba(255,255,255,.02)}
 .category-title{font-size:1.24rem;font-weight:900}
 .category-side{display:flex;align-items:center;gap:12px}
@@ -499,12 +499,7 @@ button,input,a{touch-action:manipulation}
   overflow:hidden;
 }
 
-.category-toggle{
-  width:100%;
-  background:transparent;
-  border:none;
-  color:#fff;
-  padding:18px 20px;
+Rpx 20px 18px 110px;
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -635,6 +630,413 @@ button,input,a{touch-action:manipulation}
   .category-panel{max-height:156px}
 }
 
+
+
+
+/* ===== مؤشر احترافي تفاعلي لفتح الأدوات ===== */
+.category-toggle{
+  position:relative;
+  padding-left:132px !important;
+  overflow:hidden;
+}
+
+.category-toggle::before{
+  content:"";
+  position:absolute;
+  left:18px;
+  top:50%;
+  transform:translateY(-50%);
+  width:44px;
+  height:44px;
+  border-radius:14px;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,.22), transparent 42%),
+    linear-gradient(135deg, rgba(141,228,17,.22), rgba(89,183,255,.18));
+  border:1px solid rgba(141,228,17,.22);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.10),
+    0 10px 24px rgba(0,0,0,.20),
+    0 0 0 1px rgba(141,228,17,.05);
+  backdrop-filter:blur(8px);
+  pointer-events:none;
+}
+
+.category-toggle::after{
+  content:"استعرض الأدوات";
+  position:absolute;
+  left:74px;
+  top:50%;
+  transform:translateY(-50%);
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  height:36px;
+  padding:0 14px;
+  border-radius:999px;
+  background:linear-gradient(135deg, rgba(255,255,255,.08), rgba(89,183,255,.08));
+  border:1px solid rgba(255,255,255,.10);
+  color:rgba(236,244,255,.92);
+  font-size:.82rem;
+  font-weight:800;
+  letter-spacing:.1px;
+  white-space:nowrap;
+  pointer-events:none;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.06),
+    0 8px 20px rgba(0,0,0,.16);
+}
+
+.category-toggle .interaction-hint{
+  position:absolute;
+  left:30px;
+  top:50%;
+  transform:translateY(-50%);
+  width:20px;
+  height:20px;
+  z-index:2;
+  pointer-events:none;
+  opacity:.92;
+}
+
+.category-toggle .interaction-hint::before,
+.category-toggle .interaction-hint::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:999px;
+  border:2px solid rgba(230,248,255,.92);
+  clip-path:polygon(28% 18%, 72% 50%, 28% 82%);
+}
+
+.category-toggle .interaction-hint::after{
+  inset:-7px;
+  border-color:rgba(141,228,17,.24);
+  opacity:.85;
+  animation:aiPulse 2.2s ease-out infinite;
+}
+
+.category.open .category-toggle::after{
+  content:"إخفاء الأدوات";
+  background:linear-gradient(135deg, rgba(141,228,17,.10), rgba(122,224,69,.08));
+  border-color:rgba(141,228,17,.18);
+  color:#ecffd1;
+}
+
+.category.open .category-toggle .interaction-hint{
+  transform:translateY(-50%) rotate(90deg);
+}
+
+.category-toggle:hover::before{
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.12),
+    0 14px 28px rgba(0,0,0,.24),
+    0 0 0 1px rgba(141,228,17,.08),
+    0 0 24px rgba(89,183,255,.10);
+}
+
+.category-toggle:hover::after{
+  border-color:rgba(141,228,17,.18);
+  color:#ffffff;
+}
+
+@keyframes aiPulse{
+  0%{transform:scale(.92); opacity:.0;}
+  30%{opacity:.75;}
+  100%{transform:scale(1.35); opacity:0;}
+}
+
+@media (max-width:760px){
+  .category-toggle{
+    padding-left:104px !important;
+  }
+  .category-toggle::before{
+    left:12px;
+    width:38px;
+    height:38px;
+    border-radius:12px;
+  }
+  .category-toggle::after{
+    left:58px;
+    height:32px;
+    padding:0 10px;
+    font-size:.72rem;
+  }
+  .category-toggle .interaction-hint{
+    left:22px;
+    width:16px;
+    height:16px;
+  }
+}
+
+
+/* ===== انطواء خفيف جدًا: مجرد شريط علوي من البطاقات ===== */
+.category-panel{
+  display:block;
+  max-height:92px;
+  overflow:hidden;
+  transition:max-height .28s ease;
+  position:relative;
+}
+
+.category.open .category-panel{
+  max-height:4000px;
+}
+
+.category-panel > div{
+  overflow:hidden;
+}
+
+.category:not(.open) .category-panel::after{
+  content:"";
+  position:absolute;
+  right:0;
+  left:0;
+  bottom:0;
+  height:24px;
+  background:linear-gradient(180deg,rgba(15,20,22,0),rgba(15,20,22,.98));
+  pointer-events:none;
+}
+
+.category:not(.open) .tools-grid{
+  padding:0 18px 10px;
+}
+
+.category:not(.open) .tool-card{
+  min-height:auto;
+  height:74px;
+  padding:16px 16px 10px;
+  gap:0;
+  overflow:hidden;
+}
+
+.category:not(.open) .tool-head{
+  display:grid;
+  gap:8px;
+  margin:0;
+}
+
+.category:not(.open) .tool-card h3{
+  min-height:auto;
+  margin:0;
+}
+
+.category:not(.open) .tool-actions,
+.category:not(.open) .tool-meta{
+  display:none !important;
+}
+
+@media (max-width:760px){
+  .category-panel{max-height:84px;}
+  .category:not(.open) .tools-grid{padding:0 14px 8px;}
+  .category:not(.open) .tool-card{height:66px;padding:14px 14px 8px;}
+}
+
+
+/* ===== إزالة العلامات الخلفية وجعل الخلفية رمادية ===== */
+.category:not(.open) .category-panel,
+.category:not(.open) .tools-grid{
+  background:linear-gradient(180deg, rgba(86,92,98,.18), rgba(58,63,69,.14)) !important;
+}
+
+.category:not(.open) .category-panel::after{
+  background:linear-gradient(180deg, rgba(58,63,69,0), rgba(58,63,69,.92)) !important;
+}
+
+.category:not(.open) .tool-card{
+  background:linear-gradient(180deg, rgba(72,78,84,.22), rgba(54,59,64,.18)) !important;
+  border-color:rgba(255,255,255,.06) !important;
+  box-shadow:none !important;
+}
+
+.category:not(.open) .tool-card::before,
+.category:not(.open) .tool-card::after,
+.category:not(.open) .tool-head::before,
+.category:not(.open) .tool-head::after,
+.category:not(.open) .tool-badge::before,
+.category:not(.open) .tool-badge::after{
+  content:none !important;
+  display:none !important;
+}
+
+.category:not(.open) .tool-badge{
+  background:rgba(94,108,122,.18) !important;
+  border-color:rgba(120,140,160,.18) !important;
+  box-shadow:none !important;
+}
+
+.category:not(.open) .tool-card:hover{
+  transform:none !important;
+  box-shadow:none !important;
+}
+
+.category:not(.open) .tools-grid *{
+  filter:none !important;
+}
+
+
+/* ===== الضبط النهائي: شريط علوي رفيع جدًا مطابق للمرجع ===== */
+
+/* إزالة أي مؤشرات إضافية سابقة */
+.category-toggle::before,
+.category-toggle::after,
+.category-toggle .interaction-hint{
+  content:none !important;
+  display:none !important;
+}
+
+/* إلغاء أي حشو زائد يسار السكشن بسبب المؤشر السابق */
+.category-toggle{
+  padding-left:20px !important;
+}
+
+/* الوضع المغلق: مجرد شريط علوي بسيط من البطاقات */
+.category:not(.open) .category-panel{
+  max-height:52px !important;
+  overflow:hidden !important;
+  background:transparent !important;
+}
+
+.category:not(.open) .category-panel::after{
+  content:none !important;
+  display:none !important;
+}
+
+.category:not(.open) .tools-grid{
+  padding:0 18px 0 !important;
+  gap:14px !important;
+  background:transparent !important;
+}
+
+.category:not(.open) .tool-card{
+  height:18px !important;
+  min-height:18px !important;
+  padding:0 !important;
+  overflow:hidden !important;
+  border-radius:22px 22px 0 0 !important;
+  background:linear-gradient(180deg, rgba(88,95,101,.22), rgba(70,76,82,.16)) !important;
+  border:1px solid rgba(255,255,255,.06) !important;
+  box-shadow:none !important;
+}
+
+/* إخفاء كامل لمحتوى البطاقة في الوضع المغلق */
+.category:not(.open) .tool-head,
+.category:not(.open) .tool-actions,
+.category:not(.open) .tool-meta,
+.category:not(.open) .tool-badge,
+.category:not(.open) .tool-card h3{
+  display:none !important;
+}
+
+.category:not(.open) .tool-card::before,
+.category:not(.open) .tool-card::after{
+  content:none !important;
+  display:none !important;
+}
+
+/* خلفية السكشن المغلق تكون داكنة هادئة دون توهجات */
+.category:not(.open){
+  background:linear-gradient(180deg,#13191b,#0f1416) !important;
+}
+
+/* الموبايل */
+@media (max-width:760px){
+  .category:not(.open) .category-panel{
+    max-height:44px !important;
+  }
+  .category:not(.open) .tools-grid{
+    padding:0 14px 0 !important;
+  }
+  .category:not(.open) .tool-card{
+    height:16px !important;
+    min-height:16px !important;
+  }
+}
+
+
+/* ===== إزالة الخلفية البيضاء والنقطة السوداء من رأس السكشن ===== */
+.category-toggle{
+  background:transparent !important;
+}
+
+.category-toggle:hover{
+  background:transparent !important;
+}
+
+.category-arrow{
+  background:transparent !important;
+  border-color:rgba(255,255,255,.08) !important;
+  box-shadow:none !important;
+}
+
+.category.open .category-arrow{
+  background:transparent !important;
+}
+
+.category-count{
+  background:transparent !important;
+  box-shadow:none !important;
+}
+
+
+/* ===== جعل نص رأس السكشن أبيض وحذف الستروك الداكن ===== */
+.category-title{
+  color:#ffffff !important;
+  -webkit-text-stroke:0 !important;
+  text-stroke:0 !important;
+  text-shadow:none !important;
+}
+
+.category-count{
+  color:#ffffff !important;
+  -webkit-text-stroke:0 !important;
+  text-stroke:0 !important;
+  text-shadow:none !important;
+}
+
+.category-arrow{
+  color:#ffffff !important;
+  -webkit-text-stroke:0 !important;
+  text-stroke:0 !important;
+  text-shadow:none !important;
+}
+
+
+/* ===== حذف الإطار/الستروك الأبيض المحيط برأس السكشن ===== */
+.category{
+  border-color: rgba(255,255,255,.03) !important;
+  box-shadow: none !important;
+}
+
+.category-toggle{
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.category-toggle::before,
+.category-toggle::after{
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.category-title,
+.category-count,
+.category-arrow{
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.category.open,
+.category:hover{
+  box-shadow: none !important;
+}
+
+.category.open .category-toggle,
+.category:hover .category-toggle{
+  box-shadow: none !important;
+  border: none !important;
+}
+
 </style>
 </head>
 <body>
@@ -712,12 +1114,12 @@ button,input,a{touch-action:manipulation}
 </div>
 <div class="footer-links">
 <a class="social-link social-link--iconized" href="https://wa.me/966552191598" rel="noopener" target="_blank"><span class="social-icon"><img alt="" src="https://alzarraei-gpts.github.io/Arabic-GPT-Hub/whatsapp.png"/></span><span class="social-label">رقم الواتساب</span></a>
-<a class="social-link social-link--iconized" href="https://t.me/zraiee" rel="noopener" target="_blank"><span class="social-icon"><img alt="" src="https://alzarraei-gpts.github.io/Arabic-GPT-Hub/Telegram.png"/></span><span class="social-label">تليغرام</span></a>
-<a class="social-link social-link--iconized" href="https://www.instagram.com/alzarraei.gpts/" rel="noopener" target="_blank"><span class="social-icon"><img alt="" src="https://alzarraei-gpts.github.io/Arabic-GPT-Hub/instagram.svg"/></span><span class="social-label">انستغرام</span></a>
-<a class="social-link social-link--iconized" href="https://www.facebook.com/alzarraei.gpts/" rel="noopener" target="_blank"><span class="social-icon"><img alt="" src="https://alzarraei-gpts.github.io/Arabic-GPT-Hub/facebook.svg"/></span><span class="social-label">فيس بوك</span></a>
-<a class="social-link social-link--iconized" href="https://www.youtube.com/@shaifarah" rel="noopener" target="_blank"><span class="social-icon"><img alt="" src="https://alzarraei-gpts.github.io/Arabic-GPT-Hub/youtube.svg"/></span><span class="social-label">يوتيوب</span></a>
-<a class="social-link social-link--iconized" href="https://www.tiktok.com/@alzarraei" rel="noopener" target="_blank"><span class="social-icon"><img alt="" src="https://alzarraei-gpts.github.io/Arabic-GPT-Hub/tiktok.png"/></span><span class="social-label">تيك توك</span></a>
-<a class="social-link social-link--iconized" href="https://www.linkedin.com/in/abdulrahman-alzarraei/" rel="noopener" target="_blank"><span class="social-icon"><img alt="" src="https://alzarraei-gpts.github.io/Arabic-GPT-Hub/linkedin.svg"/></span><span class="social-label">لينكدين</span></a>
+<a class="social-link social-link--iconized" href="https://t.me/ArabicAIModels" rel="noopener" target="_blank"><span class="social-icon"><img alt="" src="https://alzarraei-gpts.github.io/Arabic-GPT-Hub/Telegram.png"/></span><span class="social-label">تليغرام</span></a>
+<a class="social-link social-link--iconized" href="https://www.instagram.com/ArabicAIModels" rel="noopener" target="_blank"><span class="social-icon"><img alt="" src="https://alzarraei-gpts.github.io/Arabic-GPT-Hub/instagram.svg"/></span><span class="social-label">انستغرام</span></a>
+<a class="social-link social-link--iconized" href="https://www.facebook.com/ArabicAIModels" rel="noopener" target="_blank"><span class="social-icon"><img alt="" src="https://alzarraei-gpts.github.io/Arabic-GPT-Hub/facebook.svg"/></span><span class="social-label">فيس بوك</span></a>
+<a class="social-link social-link--iconized" href="https://www.youtube.com/@ArabicAIModels" rel="noopener" target="_blank"><span class="social-icon"><img alt="" src="https://alzarraei-gpts.github.io/Arabic-GPT-Hub/youtube.svg"/></span><span class="social-label">يوتيوب</span></a>
+<a class="social-link social-link--iconized" href="https://www.tiktok.com/@Arabic.AI.Models" rel="noopener" target="_blank"><span class="social-icon"><img alt="" src="https://alzarraei-gpts.github.io/Arabic-GPT-Hub/tiktok.png"/></span><span class="social-label">تيك توك</span></a>
+<a class="social-link social-link--iconized" href="https://www.linkedin.com/in/ArabicAIModels" rel="noopener" target="_blank"><span class="social-icon"><img alt="" src="https://alzarraei-gpts.github.io/Arabic-GPT-Hub/linkedin.svg"/></span><span class="social-label">لينكدين</span></a>
 <a aria-label="البريد الإلكتروني: zraieee@gmail.com" class="social-link social-link--iconized" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=zraieee@gmail.com" rel="noopener" target="_blank" title="zraieee@gmail.com"><span class="social-icon"><img alt="" src="https://alzarraei-gpts.github.io/Arabic-GPT-Hub/gmail.svg"/></span><span class="email-label">بريد إلكتروني</span></a>
 <a class="social-link social-link--iconized" href="https://www.paypal.com/paypalme/zraiee" rel="noopener" target="_blank"><span class="social-icon"><img alt="" src="https://alzarraei-gpts.github.io/Arabic-GPT-Hub/paypal.svg"/></span><span class="social-label">باي بال</span></a>
 <a class="social-link social-link--iconized" href="https://www.skool.com/zraiee-3956/about" rel="noopener" target="_blank"><span class="social-icon"><img alt="" src="https://alzarraei-gpts.github.io/Arabic-GPT-Hub/Skool.png"/></span><span class="social-label">سكول</span></a>
