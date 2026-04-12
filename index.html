@@ -29,7 +29,7 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;800;900&amp;family=Tajawal:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
-<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=ZVhrRQCsBfz98e_9KCLbfkKBTVMUeIwNAAwng464jPfPHvrjGKW5xxn-uS1CHS6eeCapNF4c5bPiVbc0DFFEuge1-yuZnQfhalUlliC_1rwRaNywGkYFpk51cdXV_ibC9Uu0yxn-M1kgtvK-ZvhImOO_AIvY6stVtdVSSgomZFeurrQ8b8quA_YVcSdbkeA6aK72W0LzNx-wedXW807m5tkkFifdNCokmaasAv6CGkikoCSusUtA8K-rJa1tWPbu6fHzFOyA4S4ixL7xm2fu0g" charset="UTF-8"></script><script charset="UTF-8" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=S-u7pbVm0Txby_ETt0gBUcvrr_A6RVsYXozjjLBF6vqQghvQeWvewBggIyidD1fPg9DczjODaQF4qvJS-y_umLwmAdbGAXr7BBeNnfOy_lVlAlYxGca0gr35hYFC8HMHQv0FbqEbtISOpT6oOAE02kjLTyKsHX4HDiYLlKDT4TspgD6IsYsCZ6zjdOM70IW6TFQivwK4CKFlYKsrpZ1DmAFYqwTT8uR5oE2X7bpFayKu1DOTtlGSsVto8VyzyeNUpCuhr0oRkaLHbHKgWAHVog" type="text/javascript">function toggleCategory(button) {
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=lxyCTeEycPFMeljMpDJlMugdN6Wfu9pZq3pKtIWAMKoFhdJTVKD26aajCadXlfEpxFKv_4bT-7z8B9tXIV7qNEhPW6vNdqqQ913yDLXPO3Z8u33rDuETMiegIjvzGVDf7qBgN05sXw-TWIbOCzO6wY-SBDDl3iXabvBDAD8HycwPOxg2AtY2vFoUImOKcEcLsJxZ-XwvU2h9hnBqk9WFSltGGqelEU-hx0AsI570Wi8s7n7ZzN2JoVDGC2dSUYAIH_5HasgqFO7jIfDBOEZDdw" charset="UTF-8"></script><script charset="UTF-8" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=S-u7pbVm0Txby_ETt0gBUcvrr_A6RVsYXozjjLBF6vqQghvQeWvewBggIyidD1fPg9DczjODaQF4qvJS-y_umLwmAdbGAXr7BBeNnfOy_lVlAlYxGca0gr35hYFC8HMHQv0FbqEbtISOpT6oOAE02kjLTyKsHX4HDiYLlKDT4TspgD6IsYsCZ6zjdOM70IW6TFQivwK4CKFlYKsrpZ1DmAFYqwTT8uR5oE2X7bpFayKu1DOTtlGSsVto8VyzyeNUpCuhr0oRkaLHbHKgWAHVog" type="text/javascript">function toggleCategory(button) {
   const category = button.closest('.category');
   const isOpen = category.classList.contains('open');
 
@@ -1035,6 +1035,74 @@ Rpx 20px 18px 110px;
 .category:hover .category-toggle{
   box-shadow: none !important;
   border: none !important;
+}
+
+
+/* ===== ضبط موضع العداد وتكبير خط رأس السكشن ===== */
+.category-toggle{
+  display:flex !important;
+  flex-direction:row-reverse !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  gap:16px !important;
+  padding:18px 20px !important;
+}
+
+.category-side{
+  display:flex !important;
+  flex-direction:row !important;
+  align-items:center !important;
+  gap:12px !important;
+  order:2 !important;
+  margin-inline-start:auto !important;
+}
+
+.category-title{
+  order:1 !important;
+  font-size:2rem !important;
+  font-weight:900 !important;
+  line-height:1.15 !important;
+  letter-spacing:0 !important;
+  color:#ffffff !important;
+  margin:0 !important;
+}
+
+.category-count{
+  font-size:1.2rem !important;
+  font-weight:900 !important;
+  line-height:1 !important;
+  padding:10px 18px !important;
+  min-height:46px !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  border-radius:999px !important;
+}
+
+.category-arrow{
+  width:42px !important;
+  height:42px !important;
+  font-size:14px !important;
+}
+
+@media (max-width:760px){
+  .category-toggle{
+    padding:14px 16px !important;
+    gap:12px !important;
+  }
+  .category-title{
+    font-size:1.55rem !important;
+  }
+  .category-count{
+    font-size:1rem !important;
+    min-height:40px !important;
+    padding:8px 14px !important;
+  }
+  .category-arrow{
+    width:38px !important;
+    height:38px !important;
+    font-size:13px !important;
+  }
 }
 
 </style>
